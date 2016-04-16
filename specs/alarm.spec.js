@@ -37,5 +37,20 @@ describe("App.Alarm", function() {
 
       expect(this.alarm.ring).toHaveBeenCalled();
     });
+
+    it("não executar alarme na hora definida", function() {
+      spyOn(this.alarm, 'ring');
+
+      this.alarm.day.val("15");
+      this.alarm.month.val("04");
+      this.alarm.year.val("2015");
+      this.alarm.hour.val("00");
+      this.alarm.minutes.val("00");
+
+      this.alarm.submit({preventDefault: function() {}});
+      this.alarm.check();
+
+      expect(this.alarm.ring).not.toHaveBeenCalled();
+    });
   });
 });
