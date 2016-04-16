@@ -44,8 +44,9 @@ module.exports = function(grunt) {
 
         files: [
           "<%= app.bower %>/jquery/jquery.js",
+          "<%= app.bower %>/moment/moment.js",
           "<%= app.dev.javascripts %>/alarm.js",
-          "<%= app.dev.specs %>/alarm.spec.js",
+          "<%= app.dev.specs %>/alarm.spec.js"
         ],
       },
 

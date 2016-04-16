@@ -1,7 +1,8 @@
 {
   "name": "AcordaJS",
   "dependencies": {
-    "jquery": "~1.9.1"
+    "jquery": "~1.9.1",
+    "moment": "~2.12.0"
   },
   "devDependencies": {
     "mocha": "~1.13.0",
