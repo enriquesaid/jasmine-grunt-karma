@@ -10,28 +10,32 @@ describe("App.Alarm", function() {
     this.alarm = new window.App.Alarm(this.form);
   });
 
-  it("#alarmForm", function() {
-    this.alarm.alarmForm();
+  describe("#alarmForm", function() {
+    it("adicionando valores nos inputs do alarme", function() {
+      this.alarm.alarmForm();
 
-    expect(this.form.find("[name=day]").val()).toEqual(moment().format("DD"));
-    expect(this.form.find("[name=month]").val()).toEqual(moment().format("MM"));
-    expect(this.form.find("[name=year]").val()).toEqual(moment().format("YYYY"));
-    expect(this.form.find("[name=hour]").val()).toEqual(moment().format("hh"));
-    expect(this.form.find("[name=minutes]").val()).toEqual(moment().format("mm"));
+      expect(this.form.find("[name=day]").val()).toEqual(moment().format("DD"));
+      expect(this.form.find("[name=month]").val()).toEqual(moment().format("MM"));
+      expect(this.form.find("[name=year]").val()).toEqual(moment().format("YYYY"));
+      expect(this.form.find("[name=hour]").val()).toEqual(moment().format("hh"));
+      expect(this.form.find("[name=minutes]").val()).toEqual(moment().format("mm"));
+    });
   });
 
-  it("#check", function() {
-    spyOn(this.alarm, 'ring');
+  describe("#check", function() {
+    it("executar alarme na hora definida", function() {
+      spyOn(this.alarm, 'ring');
 
-    this.alarm.day.val("15");
-    this.alarm.month.val("04");
-    this.alarm.year.val("2016");
-    this.alarm.hour.val("00");
-    this.alarm.minutes.val("00");
+      this.alarm.day.val("15");
+      this.alarm.month.val("04");
+      this.alarm.year.val("2016");
+      this.alarm.hour.val("00");
+      this.alarm.minutes.val("00");
 
-    this.alarm.submit({preventDefault: function() {}});
-    this.alarm.check();
+      this.alarm.submit({preventDefault: function() {}});
+      this.alarm.check();
 
-    expect(this.alarm.ring).toHaveBeenCalled();
+      expect(this.alarm.ring).toHaveBeenCalled();
+    });
   });
 });
