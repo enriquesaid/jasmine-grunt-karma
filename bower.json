@@ -1,0 +1,15 @@
+{
+  "name": "AcordaJS",
+  "dependencies": {
+    "jquery": "~1.9.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "chai": "~1.8.1",
+    "sinonjs": "~1.10.2",
+    "sinon-chai": "~2.4.0",
+    "chai-jquery": "~1.1.2",
+    "lodash": "~2.4.1",
+    "jasmine-core": "jasmine#~2.4.1"
+  }
+}
