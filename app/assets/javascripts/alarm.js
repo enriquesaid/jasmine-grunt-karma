@@ -14,16 +14,16 @@ App.Alarm = function(el) {
 
 App.Alarm.prototype = {
   events: function() {
-    $(document).on("ready", this.alarmForm.bind(this));
-    $(document).on("ready", this.start.bind(this));
-    this.el.on("submit", this.submit.bind(this));
+    $(document).on("ready", $.proxy(this.alarmForm, this));
+    $(document).on("ready", $.proxy(this.start, this));
+    this.el.on("submit", $.proxy(this.submit, this));
   },
 
   start: function() {
-    window.setTimeout(function() {
+    window.setTimeout($.proxy(function() {
       if(this.alarm) this.check();
       this.start();
-    }.bind(this), 1500);
+    }, this), 1500);
   },
 
   alarmForm: function() {

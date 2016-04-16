@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 
       run: {
         singleRun: true,
-        browsers: ["Chrome"],
+        browsers: ["PhantomJS"],
         logLevel: "ERROR"
       },
 
@@ -63,7 +63,7 @@ module.exports = function(grunt) {
 
       travis: {
         singleRun: true,
-        browsers: ["Chrome"]
+        browsers: ["PhantomJS"]
       }
     }
   });
