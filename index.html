@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1180,initial-scale=1,user-scalable=no">
+
+    <title>AcordaJS</title>
+
+    <meta name="description" content="AcordaJS">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" type="text/css">
+    <style>
+      html,
+      body {
+        font-family: "Lato", sans-serif;
+      }
+
+      form {
+        text-align: center;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      input {
+        width: 7em;
+        height: 2em;
+        margin: .5em;
+      }
+
+      [type=submit] {
+        margin-top: 3em;
+        width: 5em;
+        height: 5em;
+        border-radius: 100%
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Alarm</h1>
+      <form id="alarm" action="">
+        <fieldset>
+          <input type="number" name="day" id="day" placeholder="Dia" />
+          <input type="number" name="month" id="month" placeholder="Mês" />
+          <input type="number" name="year" id="year" placeholder="Ano" />
+        </fieldset>
+        <fieldset>
+          <input type="number" name="hour" id="hour" placeholder="Horas" />
+          <input type="number" name="minutes" id="minutes" placeholder="Minútos" />
+        </fieldset>
+        <button type="submit">Ativar</button>
+      </form>
+    </main>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/alarm.js"></script>
+    <script>
+      $(function() {
+        new window.App.Alarm("#alarm");
+      });
+    </script>
+  </body>
+</html>
